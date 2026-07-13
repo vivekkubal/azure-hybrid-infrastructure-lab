@@ -147,7 +147,7 @@ Migration planned using a critical path covering analysis, planning, Azure prepa
 
 ---
 
-## Part 4 — Azure Migrate Discovery
+## Part 4 - Azure Migrate Discovery
 
 ### Migration Estimate using Azure Migrate
 
@@ -168,7 +168,7 @@ Azure Migrate appliance deployed to discover and inventory on-premises servers, 
 
 ---
 
-## Part 5 — Cost Analysis
+## Part 5 - Cost Analysis
 
 ### Azure Pricing Calculator
 
@@ -178,7 +178,7 @@ Estimated monthly Azure cost: **$168.10**
 ![Azure Pricing Calculator](screenshots/05-cost-analysis/01-Azure-pricing-calculator.png)
 
 
-### TCO Comparison — On-Premises vs Azure
+### TCO Comparison - On-Premises vs Azure
 
 | | On-Premises (1 year) | Azure (1 year) |
 |---|---|---|
@@ -197,7 +197,7 @@ Migrating storage to Azure reduces total cost of ownership by approximately 88% 
 
 ---
 
-## Part 6 — Azure Infrastructure
+## Part 6 - Azure Infrastructure
 
 ### Resource Group
 
@@ -217,8 +217,8 @@ Storage account `hybridprodnoeast002` with file share `fs-hybrid-prod-noeast-001
 ### Virtual Network and Subnets
 
 VNet `vnet-hybrid-prod-noeast` with two subnets:
-- `default` — 10.0.0.0/24
-- `vnet-pe-files` — 10.0.1.0/24
+- `default` - 10.0.0.0/24
+- `vnet-pe-files` - 10.0.1.0/24
 
 
 ![VNet Creation](screenshots/06-azure-setup/03-vnet-creation.png)
@@ -244,9 +244,9 @@ The Storage Account public endpoint was initially set to "Enabled from all netwo
 
 ---
 
-## Part 7 — Entra Connect Sync
+## Part 7 - Entra Connect Sync
 
-### Entra Connect Service Account — gMSA
+### Entra Connect Service Account - gMSA
 
 Microsoft Entra Connect automatically provisioned a Group Managed Service Account (gMSA) during installation:
 
@@ -258,7 +258,7 @@ The gMSA runs the Entra Connect sync service on OSL-DC-1 with automatic password
 
 ### AD and Entra ID Synchronization
 
-Microsoft Entra Connect installed on OSL-DC-1. OU filtering applied — only the PopsPaper OU synced, excluding built-in containers. 8 users, Domain Local Security Groups, and Global Security Groups synced to Entra ID.
+Microsoft Entra Connect installed on OSL-DC-1. OU filtering applied - only the PopsPaper OU synced, excluding built-in containers. 8 users, Domain Local Security Groups, and Global Security Groups synced to Entra ID.
 
 
 ![Entra Connect OU Filtering](screenshots/07-entra-connect/01-entra-connect-ou-filtering.png)
@@ -269,13 +269,13 @@ Microsoft Entra Connect installed on OSL-DC-1. OU filtering applied — only the
 
 ---
 
-## Part 8 — File Migration
+## Part 8 - File Migration
 
 ### AzCopy Migration (Proof of Concept)
 
 AzCopy used with a SAS token to migrate the IT & Security department folder from on-premises to Azure File Share, demonstrating the migration process end-to-end.
 
-The same process applies to the remaining five department folders (HR, Finance, Sales, Production, Customer Support) — migration was scoped to one folder due to time constraints.
+The same process applies to the remaining five department folders (HR, Finance, Sales, Production, Customer Support) - migration was scoped to one folder due to time constraints.
 
 
 ![AzCopy Migration Running](screenshots/08-file-migration/01-azcopy-migration-running.png)
@@ -292,7 +292,7 @@ The same process applies to the remaining five department folders (HR, Finance, 
 
 ---
 
-## Part 9 — RBAC and Identity Access
+## Part 9 - RBAC and Identity Access
 
 ### Identity-Based Access and RBAC
 
@@ -307,7 +307,7 @@ Identity-based access enabled on the File Share via Azure Portal, connected to s
 
 ---
 
-## Part 10 — Network Security Group
+## Part 10 - Network Security Group
 
 ### NSG Configuration
 
@@ -331,7 +331,7 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 
 ---
 
-## Part 11 — Azure Backup and Key Vault
+## Part 11 - Azure Backup and Key Vault
 
 ### Recovery Services Vault
 
@@ -351,19 +351,26 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 
 `hybridprod-noeast` provisioned with Azure RBAC permission model, Norway East region.
 
+The vault was configured and access control established during this project. No secret or certifications were stored. In continouation vault would store:
+
+1. LDAPS certification imported from internal CA (OSL-DC-1)
+2. Storage account access Key
+3. Future application secrets and service principle credentials.  
+
+
 ![Key Vault Creation](screenshots/11-backup-keyvault/04-key-vault-creation.png)
 
 ---
 
-## Architecture Decision — Public Endpoint vs Private Endpoint
+## Architecture Decision - Public Endpoint vs Private Endpoint
 
 A Private Endpoint was considered but not implemented:
 
-**Cost:** A Private Endpoint places the Storage Account on a private IP inside the VNet, unreachable from on-premises over the public internet. Bridging this requires an Azure VPN Gateway (~$140+/month) and a Private DNS Resolver (~$115+/month) — nearly tripling the project's estimated monthly cost of $168.10.
+**Cost:** A Private Endpoint places the Storage Account on a private IP inside the VNet, unreachable from on-premises over the public internet. Bridging this requires an Azure VPN Gateway (~$140+/month) and a Private DNS Resolver (~$115+/month) - nearly tripling the project's estimated monthly cost of $168.10.
 
 **On-premises infrastructure:** A Site-to-Site VPN also requires compatible VPN hardware at the on-premises location, outside the scope of this VMware-based lab.
 
-**Decision:** A Public Endpoint secured by the Storage Account Firewall (IP whitelisting) provides network-layer access control at zero additional cost — aligning with PopsPaper's limited budget while preventing unauthorized access from arbitrary internet locations.
+**Decision:** A Public Endpoint secured by the Storage Account Firewall (IP whitelisting) provides network-layer access control at zero additional cost - aligning with PopsPaper's limited budget while preventing unauthorized access from arbitrary internet locations.
 
 In a production environment with a larger budget or existing Site-to-Site VPN, a Private Endpoint would be the preferred approach for full network isolation.
 
@@ -373,15 +380,15 @@ In a production environment with a larger budget or existing Site-to-Site VPN, a
 
 | Test | Method | Result |
 |---|---|---|
-| Users synced to Entra ID | Entra ID → Users | ✅ Pass — 8 users present |
-| Groups synced to Entra ID | Entra ID → Groups | ✅ Pass — Domain Local + Global groups present |
-| gMSA provisioned for Entra Connect | AD → Managed Service Accounts | ✅ Pass — provAgentgMSA present |
-| File migrated to Azure | File Share → Browse | ✅ Pass — IT & Security folder present |
-| File accessible from on-prem | Mapped Z: drive | ✅ Pass — folder visible and accessible |
+| Users synced to Entra ID | Entra ID → Users | ✅ Pass - 8 users present |
+| Groups synced to Entra ID | Entra ID → Groups | ✅ Pass - Domain Local + Global groups present |
+| gMSA provisioned for Entra Connect | AD → Managed Service Accounts | ✅ Pass - provAgentgMSA present |
+| File migrated to Azure | File Share → Browse | ✅ Pass - IT & Security folder present |
+| File accessible from on-prem | Mapped Z: drive | ✅ Pass - folder visible and accessible |
 | RBAC access works | Login as Vivek, access IT & Security folder | ✅ Pass |
-| NSG rules applied | NSG → Inbound rules | ✅ Pass — Deny all inbound at priority 65500 |
-| Backup policy active | Recovery Services Vault → Backup Items | ✅ Pass — DailyBackup-01 active |
-| Storage Firewall restricts access | Storage Account → Networking | ✅ Pass — only whitelisted IP allowed |
+| NSG rules applied | NSG → Inbound rules | ✅ Pass - Deny all inbound at priority 65500 |
+| Backup policy active | Recovery Services Vault → Backup Items | ✅ Pass - DailyBackup-01 active |
+| Storage Firewall restricts access | Storage Account → Networking | ✅ Pass - only whitelisted IP allowed |
 
 ---
 
@@ -400,12 +407,12 @@ AD synchronization initially failed due to Windows Defender Firewall blocking SM
 ## What I Learned
 
 - Hybrid identity synchronization using Microsoft Entra Connect, including OU filtering and security group sync
-- Group Managed Service Accounts (gMSA) — automatic password rotation for privileged service accounts running on domain-joined servers
+- Group Managed Service Accounts (gMSA) - automatic password rotation for privileged service accounts running on domain-joined servers
 - Cloud migration planning using Azure Migrate for discovery and inventory
 - File migration to Azure Storage using AzCopy and SAS tokens
-- Network security design — VNet, subnets, and NSG rule configuration
+- Network security design - VNet, subnets, and NSG rule configuration
 - RBAC role assignment for granular Azure resource access
-- Cost-driven architecture decisions — evaluating Public Endpoint + Storage Firewall against Private Endpoint + VPN Gateway based on budget constraints
+- Cost-driven architecture decisions - evaluating Public Endpoint + Storage Firewall against Private Endpoint + VPN Gateway based on budget constraints
 - Internal Certificate Authority deployment and LDAPS configuration for encrypted directory authentication
 
 ---
