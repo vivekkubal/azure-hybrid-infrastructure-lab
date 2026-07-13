@@ -90,9 +90,9 @@ Department folders created with NTFS permissions applied via Domain Local Groups
 
 Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encrypted LDAP authentication on port 636. Computer certificates auto-enrolled to domain-joined machines via Group Policy.
 
-![CA Issued Certificates](screenshots/02-onprem-ca-backup/01-ca-issued-certificates.png)
+![CA Issued Certificates](screenshots/02-onprem-ca-backup/01-CA-issued-certificates.png)
 
-![LDAPS Certificate](screenshots/02-onprem-ca-backup/02-ldaps-certificate.png)
+![LDAPS Certificate](screenshots/02-onprem-ca-backup/02-LDAPS-certificate.png)
 
 ### Firewall Configuration
 
@@ -111,7 +111,7 @@ Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encry
 
 Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Directory, DNS, Certificate Authority, Group Policy, and shared folders.
 
-![On-Premises Backup Schedule](screenshots/02-onprem-ca-backup/03-onprem-backup-schedule.png)
+![On-Premises Backup Schedule](screenshots/02-onprem-ca-backup/03-Onprem-backup-schedule.png)
 
 ---
 
@@ -121,7 +121,7 @@ Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Di
 
 Migration planned using a critical path covering analysis, planning, Azure preparation, identity sync, storage migration, testing, and cutover.
 
-![Migration Critical Path](screenshots/03-project-planning/01-migration-critical-path.png)
+![Migration Critical Path](screenshots/03-project-planning/01-Migration-critical-path.png)
 
 ---
 
