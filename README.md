@@ -57,6 +57,7 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 
 ![File Storage Role Installation](screenshots/01-onprem-setup/03-file-storage-role-installation.png)
 
+
 ### Users and Security Groups
 
 8 user accounts created across 6 departments, following the AGDLP model — users in Global Groups, Global Groups nested in Domain Local Groups, permissions assigned to Domain Local Groups.
@@ -72,21 +73,29 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 | Ruby Rox | Customer Support | Support Representative |
 | Rune Solberg | Executive | CTO |
 
+
 ![Domain Users Created](screenshots/01-onprem-setup/04-domain-users-created.png)
+
 
 ![Domain Joined Computers](screenshots/01-onprem-setup/05-domain-joined-computers.png)
 
+
 ![Domain Local Groups](screenshots/01-onprem-setup/06-domain-local-groups.png)
 
+
 ![Global Groups](screenshots/01-onprem-setup/07-global-groups.png)
+
 
 ### File Server and NTFS Permissions
 
 Department folders created with NTFS permissions applied via Domain Local Groups, mirroring department access boundaries.
 
+
 ![NTFS Permissions](screenshots/01-onprem-setup/08-NTFS-permissions.png)
 
+
 ![Share Permissions](screenshots/01-onprem-setup/09-share-permissions.png)
+
 
 ---
 
@@ -96,9 +105,12 @@ Department folders created with NTFS permissions applied via Domain Local Groups
 
 Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encrypted LDAP authentication on port 636. Computer certificates auto-enrolled to domain-joined machines via Group Policy.
 
+
 ![CA Issued Certificates](screenshots/02-onprem-ca-backup/01-CA-issued-certificates.png)
 
+
 ![LDAPS Certificate](screenshots/02-onprem-ca-backup/02-LDAPS-certificate.png)
+
 
 ### Firewall Configuration
 
@@ -117,7 +129,9 @@ Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encry
 
 Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Directory, DNS, Certificate Authority, Group Policy, and shared folders.
 
+
 ![On-Premises Backup Schedule](screenshots/02-onprem-ca-backup/03-Onprem-backup-schedule.png)
+
 
 ---
 
@@ -127,7 +141,9 @@ Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Di
 
 Migration planned using a critical path covering analysis, planning, Azure preparation, identity sync, storage migration, testing, and cutover.
 
+
 ![Migration Critical Path](screenshots/03-project-planning/01-Migration-critical-path.png)
+
 
 ---
 
@@ -137,13 +153,18 @@ Migration planned using a critical path covering analysis, planning, Azure prepa
 
 Azure Migrate appliance deployed to discover and inventory on-premises servers, file shares, and services before migration.
 
+
 ![Azure Migrate Setup](screenshots/04-azure-migrate/01-Azure-migrate-setup.png)
+
 
 ![Azure Migrate Scanning](screenshots/04-azure-migrate/02-Azure-migrate-scanning.png)
 
+
 ![Azure Migrate Inventory](screenshots/04-azure-migrate/03-Azure-migrate-inventory.png)
 
+
 ![Azure Migrate Discovered Resources](screenshots/04-azure-migrate/04-Azure-migrate-discovered-resources.png)
+
 
 ---
 
@@ -153,7 +174,9 @@ Azure Migrate appliance deployed to discover and inventory on-premises servers, 
 
 Estimated monthly Azure cost: **$168.10**
 
+
 ![Azure Pricing Calculator](screenshots/05-cost-analysis/01-Azure-pricing-calculator.png)
+
 
 ### TCO Comparison — On-Premises vs Azure
 
@@ -168,7 +191,9 @@ Estimated monthly Azure cost: **$168.10**
 
 Migrating storage to Azure reduces total cost of ownership by approximately 88% over one year, primarily by eliminating data center and hardware costs.
 
+
 ![TCO On-Premises vs Azure](screenshots/05-cost-analysis/02-TCO-onprem-vs-azure.png)
+
 
 ---
 
@@ -182,9 +207,12 @@ All resources deployed in `rg-hybrid-prod-noeast-001`, Norway East.
 
 Storage account `hybridprodnoeast002` with file share `fs-hybrid-prod-noeast-001`.
 
+
 ![Storage Account Overview](screenshots/06-azure-setup/01-storage-account-overview.png)
 
+
 ![File Share Overview](screenshots/06-azure-setup/02-file-share-overview.png)
+
 
 ### Virtual Network and Subnets
 
@@ -192,17 +220,23 @@ VNet `vnet-hybrid-prod-noeast` with two subnets:
 - `default` — 10.0.0.0/24
 - `vnet-pe-files` — 10.0.1.0/24
 
+
 ![VNet Creation](screenshots/06-azure-setup/03-vnet-creation.png)
 
+
 ![Subnet Configuration](screenshots/06-azure-setup/04-subnet-configuration.png)
+
 
 ### Public Endpoint and SAS Token
 
 Public endpoint enabled on Storage Account. SAS token generated for AzCopy migration.
 
+
 ![Public Endpoint Enabled](screenshots/06-azure-setup/05-public-endpoint-enabled.png)
 
+
 ![SAS Token Generation](screenshots/06-azure-setup/06-sas-token-generation.png)
+
 
 ### Storage Account Firewall
 
@@ -226,9 +260,12 @@ The gMSA runs the Entra Connect sync service on OSL-DC-1 with automatic password
 
 Microsoft Entra Connect installed on OSL-DC-1. OU filtering applied — only the PopsPaper OU synced, excluding built-in containers. 8 users, Domain Local Security Groups, and Global Security Groups synced to Entra ID.
 
+
 ![Entra Connect OU Filtering](screenshots/07-entra-connect/01-entra-connect-ou-filtering.png)
 
+
 ![Entra ID Synced Users](screenshots/07-entra-connect/02-entra-id-synced-users.png)
+
 
 ---
 
@@ -240,13 +277,18 @@ AzCopy used with a SAS token to migrate the IT & Security department folder from
 
 The same process applies to the remaining five department folders (HR, Finance, Sales, Production, Customer Support) — migration was scoped to one folder due to time constraints.
 
+
 ![AzCopy Migration Running](screenshots/08-file-migration/01-azcopy-migration-running.png)
+
 
 ![File Share Migrated Folders](screenshots/08-file-migration/02-file-share-migrated-folders.png)
 
+
 ![File Share On-Premises Access](screenshots/08-file-migration/03-file-share-onprem-access.png)
 
+
 ![File Share Mapped Drive](screenshots/08-file-migration/04-file-share-mapped-drive.png)
+
 
 ---
 
@@ -256,9 +298,12 @@ The same process applies to the remaining five department folders (HR, Finance, 
 
 Identity-based access enabled on the File Share via Azure Portal, connected to synced Entra ID identities. Role `Storage File Data SMB Share Elevated Contributor` assigned to Vivek Anand at the File Share level.
 
+
 ![Identity Based Access Enabled](screenshots/09-rbac-identity/01-identity-based-access-enabled.png)
 
+
 ![RBAC Role Assignment](screenshots/09-rbac-identity/02-rbac-role-assignment.png)
+
 
 ---
 
@@ -274,11 +319,15 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 | 65000 | Allow Azure Load Balancer | Allow |
 | 65500 | Deny all inbound | Deny |
 
+
 ![NSG Creation](screenshots/10-nsg/01-nsg-creation.png)
+
 
 ![NSG Inbound Rules](screenshots/10-nsg/02-nsg-inbound-rules.png)
 
+
 ![NSG Subnet Association](screenshots/10-nsg/03-nsg-subnet-association.png)
+
 
 ---
 
@@ -288,11 +337,15 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 
 `rsv-hybrid-prod-noeast` configured with daily backup policy (`DailyBackup-01`), retention 30 days.
 
+
 ![Recovery Services Vault](screenshots/11-backup-keyvault/01-recovery-services-vault.png)
+
 
 ![Backup Policy Created](screenshots/11-backup-keyvault/02-backup-policy-created.png)
 
+
 ![Backup Enabled File Share](screenshots/11-backup-keyvault/03-backup-enabled-fileshare.png)
+
 
 ### Key Vault
 
