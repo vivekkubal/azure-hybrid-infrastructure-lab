@@ -133,11 +133,11 @@ Azure Migrate appliance deployed to discover and inventory on-premises servers, 
 
 ![Azure Migrate Setup](screenshots/04-azure-migrate/01-Azure-migrate-setup.png)
 
-![Azure Migrate Scanning](screenshots/04-azure-migrate/02-azure-migrate-scanning.png)
+![Azure Migrate Scanning](screenshots/04-azure-migrate/02-Azure-migrate-scanning.png)
 
-![Azure Migrate Inventory](screenshots/04-azure-migrate/03-azure-migrate-inventory.png)
+![Azure Migrate Inventory](screenshots/04-azure-migrate/03-Azure-migrate-inventory.png)
 
-![Azure Migrate Discovered Resources](screenshots/04-azure-migrate/04-azure-migrate-discovered-resources.png)
+![Azure Migrate Discovered Resources](screenshots/04-azure-migrate/04-Azure-migrate-discovered-resources.png)
 
 ---
 
@@ -147,7 +147,7 @@ Azure Migrate appliance deployed to discover and inventory on-premises servers, 
 
 Estimated monthly Azure cost: **$168.10**
 
-![Azure Pricing Calculator](screenshots/05-cost-analysis/01-azure-pricing-calculator.png)
+![Azure Pricing Calculator](screenshots/05-cost-analysis/01-Azure-pricing-calculator.png)
 
 ### TCO Comparison — On-Premises vs Azure
 
@@ -162,7 +162,7 @@ Estimated monthly Azure cost: **$168.10**
 
 Migrating storage to Azure reduces total cost of ownership by approximately 88% over one year, primarily by eliminating data center and hardware costs.
 
-![TCO On-Premises vs Azure](screenshots/05-cost-analysis/02-tco-onprem-vs-azure.png)
+![TCO On-Premises vs Azure](screenshots/05-cost-analysis/02-TCO-onprem-vs-azure.png)
 
 ---
 
@@ -215,8 +215,6 @@ Microsoft Entra Connect automatically provisioned a Group Managed Service Accoun
 - **Purpose:** Azure AD cloud sync service account
 
 The gMSA runs the Entra Connect sync service on OSL-DC-1 with automatic password rotation managed by the Domain Controller. This eliminates the risk of a static service account password on a privileged account that has AD read/write access for identity synchronisation.
-
-![gMSA Service Account](screenshots/07-entra-connect/00-gmsa-service-account.png)
 
 ### AD and Entra ID Synchronization
 
