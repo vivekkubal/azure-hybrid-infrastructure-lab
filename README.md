@@ -78,7 +78,7 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 
 Department folders created with NTFS permissions applied via Domain Local Groups, mirroring department access boundaries.
 
-![NTFS Permissions](screenshots/01-onprem-setup/08-ntfs-permissions.png)
+![NTFS Permissions](screenshots/01-onprem-setup/08-NTFS-permissions.png)
 
 ![Share Permissions](screenshots/01-onprem-setup/09-share-permissions.png)
 
