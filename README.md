@@ -131,7 +131,7 @@ Migration planned using a critical path covering analysis, planning, Azure prepa
 
 Azure Migrate appliance deployed to discover and inventory on-premises servers, file shares, and services before migration.
 
-![Azure Migrate Setup](screenshots/04-azure-migrate/01-azure-migrate-setup.png)
+![Azure Migrate Setup](screenshots/04-azure-migrate/01-Azure-migrate-setup.png)
 
 ![Azure Migrate Scanning](screenshots/04-azure-migrate/02-azure-migrate-scanning.png)
 
