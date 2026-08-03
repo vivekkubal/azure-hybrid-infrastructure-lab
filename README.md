@@ -44,19 +44,14 @@ On-premises Active Directory provides identity, synchronized to Microsoft Entra 
 Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest created with DNS, DHCP, and File Server roles installed.
 <br>
 
-### AD installation ###  
-
 ![AD Installation](screenshots/01-onprem-setup/01-AD-installation.png)
 <br>
 <br>
 
-### DC Promotion ###
 ![DC Promotion](screenshots/01-onprem-setup/02-DC-promotion.png)
 
 <br>
 <br>
-
-### File Storage role installation ###
 
 ![File Storage Role Installation](screenshots/01-onprem-setup/03-file-storage-role-installation.png)
 
@@ -82,25 +77,21 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 <br>
 <br>
 
-### Domain users created ###
 ![Domain Users Created](screenshots/01-onprem-setup/04-domain-users-created.png)
 
 <br>
 <br>
 
-### Domain joined computers ###
 ![Domain Joined Computers](screenshots/01-onprem-setup/05-domain-joined-computers.png)
 
 <br>
 <br>
 
-### Domain Local groups ###
 ![Domain Local Groups](screenshots/01-onprem-setup/06-domain-local-groups.png)
 
 <br>
 <br>
 
-### Global Groups ###
 ![Global Groups](screenshots/01-onprem-setup/07-global-groups.png)
 
 <br>
@@ -114,13 +105,11 @@ Department folders created with NTFS permissions applied via Domain Local Groups
 <br>
 
 
-### NTFS permissions ###
 ![NTFS Permissions](screenshots/01-onprem-setup/08-NTFS-permissions.png)
 
 <br>
 <br>
 
-### Share permissions ###
 ![Share Permissions](screenshots/01-onprem-setup/09-share-permissions.png)
 
 
@@ -135,13 +124,11 @@ Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encry
 <br>
 <br>
 
-### CA issued certificates ###
 ![CA Issued Certificates](screenshots/02-onprem-ca-backup/01-CA-issued-certificates.png)
 
 <br>
 <br>
 
-### LDAPS certificate ###
 ![LDAPS Certificate](screenshots/02-onprem-ca-backup/02-LDAPS-certificate.png)
 
 
@@ -165,7 +152,6 @@ Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Di
 <br>
 <br>
 
-#### On-prem backup schedule ###
 ![On-Premises Backup Schedule](screenshots/02-onprem-ca-backup/03-Onprem-backup-schedule.png)
 
 
@@ -180,7 +166,6 @@ Migration planned using a critical path covering analysis, planning, Azure prepa
 <br>
 <br>
 
-Migration-critical-path
 ![Migration Critical Path](screenshots/03-project-planning/01-Migration-critical-path.png)
 
 
@@ -195,25 +180,21 @@ Azure Migrate appliance deployed to discover and inventory on-premises servers, 
 <br>
 <br>
 
-### Azure-migrate-setup ###
 ![Azure Migrate Setup](screenshots/04-azure-migrate/01-Azure-migrate-setup.png)
 
 <br>
 <br>
 
-### Azure-migrate-scanning ###
 ![Azure Migrate Scanning](screenshots/04-azure-migrate/02-Azure-migrate-scanning.png)
 
 <br>
 <br>
 
-### Azure-migrate-inventory ###
 ![Azure Migrate Inventory](screenshots/04-azure-migrate/03-Azure-migrate-inventory.png)
 
 <br>
 <br>
 
-### Azure migrate discovered resources ###
 ![Azure Migrate Discovered Resources](screenshots/04-azure-migrate/04-Azure-migrate-discovered-resources.png)
 
 
@@ -228,7 +209,6 @@ Estimated monthly Azure cost: **$168.10**
 <br>
 <br>
 
-### Azure pricing calculator ###
 ![Azure Pricing Calculator](screenshots/05-cost-analysis/01-Azure-pricing-calculator.png)
 
 
@@ -248,7 +228,6 @@ Migrating storage to Azure reduces total cost of ownership by approximately 88% 
 <br>
 <br>
 
-### TCO onprem vs azure ###
 ![TCO On-Premises vs Azure](screenshots/05-cost-analysis/02-TCO-onprem-vs-azure.png)
 
 
@@ -267,13 +246,11 @@ Storage account `hybridprodnoeast002` with file share `fs-hybrid-prod-noeast-001
 <br>
 <br>
 
-### Storage account overview ###
 ![Storage Account Overview](screenshots/06-azure-setup/01-storage-account-overview.png)
 
 <br>
 <br>
 
-### File share overview ###
 ![File Share Overview](screenshots/06-azure-setup/02-file-share-overview.png)
 
 
@@ -286,13 +263,11 @@ VNet `vnet-hybrid-prod-noeast` with two subnets:
 <br>
 <br>
 
-### VNET creation ###
 ![VNet Creation](screenshots/06-azure-setup/03-vnet-creation.png)
 
 <br>
 <br>
 
-### Subnet Configuration ###
 ![Subnet Configuration](screenshots/06-azure-setup/04-subnet-configuration.png)
 
 
@@ -303,13 +278,11 @@ Public endpoint enabled on Storage Account. SAS token generated for AzCopy migra
 <br>
 <br>
 
-### Public Endpoint enabled ###
 ![Public Endpoint Enabled](screenshots/06-azure-setup/05-public-endpoint-enabled.png)
 
 <br>
 <br>
 
-### SAS token generation ###
 ![SAS Token Generation](screenshots/06-azure-setup/06-sas-token-generation.png)
 
 
@@ -338,15 +311,11 @@ Microsoft Entra Connect installed on OSL-DC-1. OU filtering applied - only the P
 <br>
 <br>
 
-### Entra connect OU filtering ###
 ![Entra Connect OU Filtering](screenshots/07-entra-connect/01-entra-connect-ou-filtering.png)
 
-
 <br>
 <br>
 
-
-### Entra id synced users ###
 ![Entra ID Synced Users](screenshots/07-entra-connect/02-entra-id-synced-users.png)
 
 
@@ -363,25 +332,21 @@ The same process applies to the remaining five department folders (HR, Finance, 
 <br>
 <br>
 
-### AzCopy migration running ###
 ![AzCopy Migration Running](screenshots/08-file-migration/01-azcopy-migration-running.png)
 
 <br>
 <br>
 
-### File share migrated folders ###
 ![File Share Migrated Folders](screenshots/08-file-migration/02-file-share-migrated-folders.png)
 
 <br>
 <br>
 
-### File share onprem access ###
 ![File Share On-Premises Access](screenshots/08-file-migration/03-file-share-onprem-access.png)
 
 <br>
 <br>
 
-### File share mapped drive ###
 ![File Share Mapped Drive](screenshots/08-file-migration/04-file-share-mapped-drive.png)
 
 
@@ -396,13 +361,11 @@ Identity-based access enabled on the File Share via Azure Portal, connected to s
 <br>
 <br>
 
-### identity based access enabled ###
 ![Identity Based Access Enabled](screenshots/09-rbac-identity/01-identity-based-access-enabled.png)
 
 <br>
 <br>
 
-### RBAC role assignment ###
 ![RBAC Role Assignment](screenshots/09-rbac-identity/02-rbac-role-assignment.png)
 
 
@@ -423,19 +386,16 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 <br>
 <br>
 
-### NSG creation ###
 ![NSG Creation](screenshots/10-nsg/01-nsg-creation.png)
 
 <br>
 <br>
 
-### NSG inbound rules ##
 ![NSG Inbound Rules](screenshots/10-nsg/02-nsg-inbound-rules.png)
 
 <br>
 <br>
 
-### NSG subnet association ###
 ![NSG Subnet Association](screenshots/10-nsg/03-nsg-subnet-association.png)
 
 
@@ -450,20 +410,16 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 <br>
 <br>
 
-### Recovery services vault ###
 ![Recovery Services Vault](screenshots/11-backup-keyvault/01-recovery-services-vault.png)
 
 <br>
 <br>
 
-### Backup policy created ###
 ![Backup Policy Created](screenshots/11-backup-keyvault/02-backup-policy-created.png)
 
 <br>
 <br>
 
-
-### Backup enabled fileshare ###
 ![Backup Enabled File Share](screenshots/11-backup-keyvault/03-backup-enabled-fileshare.png)
 
 
@@ -488,7 +444,7 @@ key-vault-creation
 
 A Private Endpoint was considered but not implemented:
 
-**Cost:** A Private Endpoint places the Storage Account on a private IP inside the VNet, unreachable from on-premises over the public internet. Bridging this requires an Azure VPN Gateway (~$140+/month) and a Private DNS Resolver (~$115+/month) - nearly tripling the project's estimated monthly cost of $168.10.
+**Cost:** A Private Endpoint places the Storage Account on a private IP inside the VNet, unreachable from on-premises over the public internet. Bridging this requires an Azure VPN Gateway ($140+/month) and a Private DNS Resolver (~$115+/month) - nearly tripling the project's estimated monthly cost of $168.10.
 
 **On-premises infrastructure:** A Site-to-Site VPN also requires compatible VPN hardware at the on-premises location, outside the scope of this VMware-based lab.
 
@@ -537,15 +493,6 @@ post-submission improvement phase of this project to:
 
 **All technical implementation, Azure Portal configuration, VMware setup, and Active Directory work was performed manually without AI assistance.**
 
-**External tools used:**
-
-- Azure Pricing Calculator — cost estimation
-- Azure TCO Calculator — on-premises vs cloud cost comparison
-- Azure Migrate — on-premises discovery and inventory
-- AzCopy — file migration
-- draw.io / external diagram tool — architecture diagram
-- VMware Workstation — on-premises virtual environment
-
 ---
 
 ## What I Learned
@@ -569,3 +516,14 @@ post-submission improvement phase of this project to:
 - Store certificates and secrets in Key Vault (currently provisioned but empty)
 - Consider Private Endpoint + VPN Gateway if budget allows, for full network isolation
 - Configure Storage Account Firewall to whitelist on-premises public IP for additional network-layer security
+
+---
+
+**External tools used:**
+
+- Azure Pricing Calculator — cost estimation
+- Azure TCO Calculator — on-premises vs cloud cost comparison
+- Azure Migrate — on-premises discovery and inventory
+- AzCopy — file migration
+- draw.io / external diagram tool — architecture diagram
+- VMware Workstation — on-premises virtual environment
