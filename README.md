@@ -106,7 +106,7 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 <br>
 <br>
 
-### File Server and NTFS Permissions
+### File Server and NTFS Permissions ###
 
 Department folders created with NTFS permissions applied via Domain Local Groups, mirroring department access boundaries.
 
