@@ -519,7 +519,7 @@ post-submission improvement phase of this project to:
 
 ---
 
-**External tools used:**
+## External tools used:
 
 - Azure Pricing Calculator — cost estimation
 - Azure TCO Calculator — on-premises vs cloud cost comparison
