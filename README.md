@@ -42,11 +42,9 @@ On-premises Active Directory provides identity, synchronized to Microsoft Entra 
 ### Active Directory Domain Services
 
 Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest created with DNS, DHCP, and File Server roles installed.
-
-<br>
 <br>
 
-AD installation
+# AD installation # 
 
 ![AD Installation](screenshots/01-onprem-setup/01-AD-installation.png)
 <br>
