@@ -49,17 +49,19 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 ![AD Installation](screenshots/01-onprem-setup/01-AD-installation.png)
 <br>
 <br>
-<br>
-<br>
-
 
 ### DC Promotion ###
 ![DC Promotion](screenshots/01-onprem-setup/02-DC-promotion.png)
 
+<br>
+<br>
 
-
+### File Storage role installation ###
 
 ![File Storage Role Installation](screenshots/01-onprem-setup/03-file-storage-role-installation.png)
+
+<br>
+<br>
 
 
 ### Users and Security Groups
@@ -77,18 +79,32 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 | Ruby Rox | Customer Support | Support Representative |
 | Rune Solberg | Executive | CTO |
 
+<br>
+<br>
 
+### Domain users created ###
 ![Domain Users Created](screenshots/01-onprem-setup/04-domain-users-created.png)
 
+<br>
+<br>
 
+### Domain joined computers ###
 ![Domain Joined Computers](screenshots/01-onprem-setup/05-domain-joined-computers.png)
 
+<br>
+<br>
 
+### Domain Local groups ###
 ![Domain Local Groups](screenshots/01-onprem-setup/06-domain-local-groups.png)
 
+<br>
+<br>
 
+### Global Groups ###
 ![Global Groups](screenshots/01-onprem-setup/07-global-groups.png)
 
+<br>
+<br>
 
 ### File Server and NTFS Permissions
 
