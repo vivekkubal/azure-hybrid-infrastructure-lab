@@ -110,10 +110,18 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 
 Department folders created with NTFS permissions applied via Domain Local Groups, mirroring department access boundaries.
 
+<br>
+<br>
+
+
+NTFS-permissions
 
 ![NTFS Permissions](screenshots/01-onprem-setup/08-NTFS-permissions.png)
 
+<br>
+<br>
 
+share-permissions
 ![Share Permissions](screenshots/01-onprem-setup/09-share-permissions.png)
 
 
@@ -125,10 +133,16 @@ Department folders created with NTFS permissions applied via Domain Local Groups
 
 Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encrypted LDAP authentication on port 636. Computer certificates auto-enrolled to domain-joined machines via Group Policy.
 
+<br>
+<br>
 
+CA-issued-certificates
 ![CA Issued Certificates](screenshots/02-onprem-ca-backup/01-CA-issued-certificates.png)
 
+<br>
+<br>
 
+LDAPS-certificate
 ![LDAPS Certificate](screenshots/02-onprem-ca-backup/02-LDAPS-certificate.png)
 
 
@@ -149,7 +163,8 @@ Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encry
 
 Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Directory, DNS, Certificate Authority, Group Policy, and shared folders.
 
-
+<br>
+<br>
 ![On-Premises Backup Schedule](screenshots/02-onprem-ca-backup/03-Onprem-backup-schedule.png)
 
 
@@ -161,7 +176,10 @@ Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Di
 
 Migration planned using a critical path covering analysis, planning, Azure preparation, identity sync, storage migration, testing, and cutover.
 
+<br>
+<br>
 
+Migration-critical-path
 ![Migration Critical Path](screenshots/03-project-planning/01-Migration-critical-path.png)
 
 
@@ -173,16 +191,27 @@ Migration planned using a critical path covering analysis, planning, Azure prepa
 
 Azure Migrate appliance deployed to discover and inventory on-premises servers, file shares, and services before migration.
 
-
+<br>
+<br>
+Azure-migrate-setup
 ![Azure Migrate Setup](screenshots/04-azure-migrate/01-Azure-migrate-setup.png)
 
+<br>
+<br>
 
+Azure-migrate-scanning
 ![Azure Migrate Scanning](screenshots/04-azure-migrate/02-Azure-migrate-scanning.png)
 
+<br>
+<br>
 
+Azure-migrate-inventory
 ![Azure Migrate Inventory](screenshots/04-azure-migrate/03-Azure-migrate-inventory.png)
 
+<br>
+<br>
 
+Azure-migrate-discovered-resources
 ![Azure Migrate Discovered Resources](screenshots/04-azure-migrate/04-Azure-migrate-discovered-resources.png)
 
 
@@ -194,7 +223,8 @@ Azure Migrate appliance deployed to discover and inventory on-premises servers, 
 
 Estimated monthly Azure cost: **$168.10**
 
-
+<br>
+<br>
 ![Azure Pricing Calculator](screenshots/05-cost-analysis/01-Azure-pricing-calculator.png)
 
 
@@ -211,7 +241,8 @@ Estimated monthly Azure cost: **$168.10**
 
 Migrating storage to Azure reduces total cost of ownership by approximately 88% over one year, primarily by eliminating data center and hardware costs.
 
-
+<br>
+<br>
 ![TCO On-Premises vs Azure](screenshots/05-cost-analysis/02-TCO-onprem-vs-azure.png)
 
 
@@ -227,10 +258,12 @@ All resources deployed in `rg-hybrid-prod-noeast-001`, Norway East.
 
 Storage account `hybridprodnoeast002` with file share `fs-hybrid-prod-noeast-001`.
 
-
+<br>
+<br>
 ![Storage Account Overview](screenshots/06-azure-setup/01-storage-account-overview.png)
 
-
+<br>
+<br>
 ![File Share Overview](screenshots/06-azure-setup/02-file-share-overview.png)
 
 
@@ -240,10 +273,12 @@ VNet `vnet-hybrid-prod-noeast` with two subnets:
 - `default` - 10.0.0.0/24
 - `vnet-pe-files` - 10.0.1.0/24
 
-
+<br>
+<br>
 ![VNet Creation](screenshots/06-azure-setup/03-vnet-creation.png)
 
-
+<br>
+<br>
 ![Subnet Configuration](screenshots/06-azure-setup/04-subnet-configuration.png)
 
 
@@ -251,10 +286,12 @@ VNet `vnet-hybrid-prod-noeast` with two subnets:
 
 Public endpoint enabled on Storage Account. SAS token generated for AzCopy migration.
 
-
+<br>
+<br>
 ![Public Endpoint Enabled](screenshots/06-azure-setup/05-public-endpoint-enabled.png)
 
-
+<br>
+<br>
 ![SAS Token Generation](screenshots/06-azure-setup/06-sas-token-generation.png)
 
 
@@ -297,16 +334,20 @@ AzCopy used with a SAS token to migrate the IT & Security department folder from
 
 The same process applies to the remaining five department folders (HR, Finance, Sales, Production, Customer Support) - migration was scoped to one folder due to time constraints.
 
-
+<br>
+<br>
 ![AzCopy Migration Running](screenshots/08-file-migration/01-azcopy-migration-running.png)
 
-
+<br>
+<br>
 ![File Share Migrated Folders](screenshots/08-file-migration/02-file-share-migrated-folders.png)
 
-
+<br>
+<br>
 ![File Share On-Premises Access](screenshots/08-file-migration/03-file-share-onprem-access.png)
 
-
+<br>
+<br>
 ![File Share Mapped Drive](screenshots/08-file-migration/04-file-share-mapped-drive.png)
 
 
@@ -318,10 +359,12 @@ The same process applies to the remaining five department folders (HR, Finance, 
 
 Identity-based access enabled on the File Share via Azure Portal, connected to synced Entra ID identities. Role `Storage File Data SMB Share Elevated Contributor` assigned to Vivek Anand at the File Share level.
 
-
+<br>
+<br>
 ![Identity Based Access Enabled](screenshots/09-rbac-identity/01-identity-based-access-enabled.png)
 
-
+<br>
+<br>
 ![RBAC Role Assignment](screenshots/09-rbac-identity/02-rbac-role-assignment.png)
 
 
@@ -339,13 +382,16 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 | 65000 | Allow Azure Load Balancer | Allow |
 | 65500 | Deny all inbound | Deny |
 
-
+<br>
+<br>
 ![NSG Creation](screenshots/10-nsg/01-nsg-creation.png)
 
-
+<br>
+<br>
 ![NSG Inbound Rules](screenshots/10-nsg/02-nsg-inbound-rules.png)
 
-
+<br>
+<br>
 ![NSG Subnet Association](screenshots/10-nsg/03-nsg-subnet-association.png)
 
 
@@ -357,13 +403,19 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 
 `rsv-hybrid-prod-noeast` configured with daily backup policy (`DailyBackup-01`), retention 30 days.
 
-
+<br>
+<br>
 ![Recovery Services Vault](screenshots/11-backup-keyvault/01-recovery-services-vault.png)
 
-
+<br>
+<br>
 ![Backup Policy Created](screenshots/11-backup-keyvault/02-backup-policy-created.png)
 
+<br>
+<br>
 
+
+backup-enabled-fileshare
 ![Backup Enabled File Share](screenshots/11-backup-keyvault/03-backup-enabled-fileshare.png)
 
 
@@ -377,7 +429,9 @@ The vault was configured and access control established during this project. No 
 2. Storage account access Key
 3. Future application secrets and service principle credentials.  
 
-
+<br>
+<br>
+key-vault-creation
 ![Key Vault Creation](screenshots/11-backup-keyvault/04-key-vault-creation.png)
 
 ---
