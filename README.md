@@ -52,6 +52,8 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 <br>
 <br>
 
+
+# DC Promotion # 
 ![DC Promotion](screenshots/01-onprem-setup/02-DC-promotion.png)
 
 
