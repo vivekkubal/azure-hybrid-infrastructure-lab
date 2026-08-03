@@ -482,19 +482,6 @@ AD synchronization initially failed due to Windows Defender Firewall blocking SM
 
 ---
 
-## AI and External Tools
-
-**AI assistance:** Claude (Anthropic) was used during the
-post-submission improvement phase of this project to:
-
-- Review and correct architectural inaccuracies
-- Improve README structure and documentation quality
-- Generate the architecture diagram prompt and review iterations based on the original exam project submission
-
-**All technical implementation, Azure Portal configuration, VMware setup, and Active Directory work was performed manually without AI assistance.**
-
----
-
 ## What I Learned
 
 - Hybrid identity synchronization using Microsoft Entra Connect, including OU filtering and security group sync
@@ -527,3 +514,16 @@ post-submission improvement phase of this project to:
 - AzCopy — file migration
 - draw.io / external diagram tool — architecture diagram
 - VMware Workstation — on-premises virtual environment
+
+---
+
+## AI and External Tools
+
+**AI assistance:** Claude (Anthropic) was used during the
+post-submission improvement phase of this project to:
+
+- Review and correct architectural inaccuracies
+- Improve README structure and documentation quality
+- Generate the architecture diagram prompt and review iterations based on the original exam project submission
+
+**All technical implementation, Azure Portal configuration, VMware setup, and Active Directory work was performed manually without AI assistance.**
