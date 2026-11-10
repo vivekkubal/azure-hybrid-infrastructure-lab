@@ -78,6 +78,7 @@ Windows Server 2022 promoted to Domain Controller for `popspaper.com`. Forest cr
 <br>
 
 ![Domain Users Created](screenshots/01-onprem-setup/04-domain-users-created.png)
+In this step, created different users, who will have their own machine and login access with predefined access control.
 
 <br>
 <br>
