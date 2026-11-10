@@ -90,8 +90,6 @@ File and Storage Services, DNS, and DHCP roles added to the server.
 <br>
 
 ![Domain Users Created](screenshots/01-onprem-setup/04-domain-users-created.png)
-In this step, created different users, who will have their own machine and login access with predefined access control.
-
 <br>
 Domain users created, each with their own machine and login access under predefined access control.
 <br>
