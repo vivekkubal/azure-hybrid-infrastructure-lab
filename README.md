@@ -84,12 +84,12 @@ In this step, created different users, who will have their own machine and login
 <br>
 
 ![Domain Joined Computers](screenshots/01-onprem-setup/05-domain-joined-computers.png)
-
+Created different computers
 <br>
 <br>
 
 ![Domain Local Groups](screenshots/01-onprem-setup/06-domain-local-groups.png)
-
+Created domain local and global groups to distribute the access securarly 
 <br>
 <br>
 
