@@ -97,7 +97,7 @@ Domain users created, each with their own machine and login access under predefi
 ![Domain Joined Computers](screenshots/01-onprem-setup/05-domain-joined-computers.png)
 <br>
 Client machines joined to the popspaper.com domain.
-<br>
+<br><br>
 
 ![Domain Local Groups](screenshots/01-onprem-setup/06-domain-local-groups.png)
 <br>
@@ -108,6 +108,7 @@ Domain Local groups created for folder-level permissions.
 ![Global Groups](screenshots/01-onprem-setup/07-global-groups.png)
 <br>
 Global groups created to hold department users (AGDLP model).
+<br>
 <br>
 <br>
 
