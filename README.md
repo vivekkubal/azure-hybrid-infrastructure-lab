@@ -8,6 +8,8 @@ End-to-end hybrid cloud migration project: migrating Pop's Paper Company from an
 
 ![Architecture Diagram](architecture/architectural-diagram.png) 
 
+Hybrid architecture showing on-premises AD, Entra ID sync, and the Azure file share, backup, and security resources.
+
 On-premises Active Directory provides identity, synchronized to Microsoft Entra ID via Entra Connect. Azure provides scalable file storage (Azure Files), backup (Recovery Services Vault), and secrets management (Key Vault). The Storage Account uses a public endpoint secured by the built-in Storage Firewall, avoiding the cost of a Private Endpoint and VPN Gateway.
 
 ---
