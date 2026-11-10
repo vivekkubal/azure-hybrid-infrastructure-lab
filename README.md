@@ -63,7 +63,6 @@ Server promoted to Domain Controller for popspaper.com
 <br>
 
 ![File Storage Role Installation](screenshots/01-onprem-setup/03-file-storage-role-installation.png)
-
 <br>
 File and Storage Services, DNS, and DHCP roles added to the server.
 <br>
@@ -96,20 +95,17 @@ Domain users created, each with their own machine and login access under predefi
 <br>
 
 ![Domain Joined Computers](screenshots/01-onprem-setup/05-domain-joined-computers.png)
-Created different computers
 <br>
 Client machines joined to the popspaper.com domain.
 <br>
 
 ![Domain Local Groups](screenshots/01-onprem-setup/06-domain-local-groups.png)
-Created domain local and global groups to distribute the access securarly 
 <br>
 Domain Local groups created for folder-level permissions.
 <br>
 <br>
 
 ![Global Groups](screenshots/01-onprem-setup/07-global-groups.png)
-
 <br>
 Global groups created to hold department users (AGDLP model).
 <br>
@@ -119,22 +115,22 @@ Global groups created to hold department users (AGDLP model).
 ### File Server and NTFS Permissions ###
 
 Department folders created with NTFS permissions applied via Domain Local Groups, mirroring department access boundaries.
-
 <br>
 NTFS permissions on a department folder, assigned through Domain Local groups.
 <br>
 <br>
 
-
 ![NTFS Permissions](screenshots/01-onprem-setup/08-NTFS-permissions.png)
-
 <br>
-Advanced sharing permissions set on the same folder.
+NTFS permissions on a department folder, assigned through Domain Local groups.
 <br>
 <br>
 
 ![Share Permissions](screenshots/01-onprem-setup/09-share-permissions.png)
-
+<br>
+Advanced sharing permissions set on the same folder.
+<br>
+<br>
 
 ---
 
@@ -144,19 +140,15 @@ Advanced sharing permissions set on the same folder.
 
 Internal Root CA installed on OSL-DC-1. LDAPS certificate issued, enabling encrypted LDAP authentication on port 636. Computer certificates auto-enrolled to domain-joined machines via Group Policy.
 
-<br>
-<br>
-
-
 ![CA Issued Certificates](screenshots/02-onprem-ca-backup/01-CA-issued-certificates.png)
-
 <br>
 Internal CA console showing certificates issued to the DC and domain machines.
 <br>
 <br>
 
 ![LDAPS Certificate](screenshots/02-onprem-ca-backup/02-LDAPS-certificate.png)
-<br>LDAPS certificate for the DC, enabling encrypted LDAP on port 636.
+<br>
+LDAPS certificate for the DC, enabling encrypted LDAP on port 636.
 <br>
 <br>
 
@@ -176,7 +168,6 @@ Internal CA console showing certificates issued to the DC and domain machines.
 ### Backup Server
 
 Dedicated backup server with 100GB SSD. Daily backup schedule covering Active Directory, DNS, Certificate Authority, Group Policy, and shared folders.
-
 <br>
 <br>
 
@@ -193,12 +184,10 @@ Windows Server Backup scheduled to run daily to a dedicated backup disk.
 ### Migration Critical Path
 
 Migration planned using a critical path covering analysis, planning, Azure preparation, identity sync, storage migration, testing, and cutover.
-
 <br>
 <br>
 
 ![Migration Critical Path](screenshots/03-project-planning/01-Migration-critical-path.png)
-
 <br>
 Critical path from analysis and planning through migration, testing, and cutover.
 <br>
@@ -211,33 +200,28 @@ Critical path from analysis and planning through migration, testing, and cutover
 ### Migration Estimate using Azure Migrate
 
 Azure Migrate appliance deployed to discover and inventory on-premises servers, file shares, and services before migration.
-
-<br>
 <br>
 
+<br>
 ![Azure Migrate Setup](screenshots/04-azure-migrate/01-Azure-migrate-setup.png)
-
 <br>
 Azure Migrate project created and the discovery appliance set up.
 <br>
 <br>
 
 ![Azure Migrate Scanning](screenshots/04-azure-migrate/02-Azure-migrate-scanning.png)
-
 <br>
 Appliance connecting to Azure and scanning the on-premises server.
 <br>
 <br>
 
 ![Azure Migrate Inventory](screenshots/04-azure-migrate/03-Azure-migrate-inventory.png)
-
 <br>
 Discovered server details: OS, hardware, installed software, and file shares.
 <br>
 <br>
 
 ![Azure Migrate Discovered Resources](screenshots/04-azure-migrate/04-Azure-migrate-discovered-resources.png)
-
 <br>
 Inventory of the file shares found on OSL-DC-1.
 <br>
@@ -249,12 +233,10 @@ Inventory of the file shares found on OSL-DC-1.
 ### Azure Pricing Calculator
 
 Estimated monthly Azure cost: **$168.10**
-
 <br>
 <br>
 
 ![Azure Pricing Calculator](screenshots/05-cost-analysis/01-Azure-pricing-calculator.png)
-
 <br>
 Monthly Azure estimate of $168.10.
 <br>
@@ -299,14 +281,12 @@ Storage account `hybridprodnoeast002` with file share `fs-hybrid-prod-noeast-001
 <br>
 
 ![Storage Account Overview](screenshots/06-azure-setup/01-storage-account-overview.png)
-
 <br>
 Storage account created in Norway East.
 <br>
 <br>
 
 ![File Share Overview](screenshots/06-azure-setup/02-file-share-overview.png)
-
 <br>
 Azure file share created inside the storage account.
 <br>
@@ -319,13 +299,10 @@ Azure file share created inside the storage account.
 VNet `vnet-hybrid-prod-noeast` with two subnets:
 - `default` - 10.0.0.0/24
 - `vnet-pe-files` - 10.0.1.0/24
-
 <br>
 <br>
-
 
 ![VNet Creation](screenshots/06-azure-setup/03-vnet-creation.png)
-
 <br>
 Virtual network created in the resource group.
 <br>
@@ -341,19 +318,16 @@ Two subnets configured inside the VNet.
 ### Public Endpoint and SAS Token
 
 Public endpoint enabled on Storage Account. SAS token generated for AzCopy migration.
-
 <br>
 <br>
 
 ![Public Endpoint Enabled](screenshots/06-azure-setup/05-public-endpoint-enabled.png)
-
 <br>
 Public network access enabled on the storage account.
 <br>
 <br>
 
 ![SAS Token Generation](screenshots/06-azure-setup/06-sas-token-generation.png)
-
 <br>
 SAS token generated for the AzCopy migration. The token string is not shown.
 <br>
@@ -386,14 +360,12 @@ Microsoft Entra Connect installed on OSL-DC-1. OU filtering applied - only the P
 <br>
 
 ![Entra Connect OU Filtering](screenshots/07-entra-connect/01-entra-connect-ou-filtering.png)
-
 <br>
 Entra Connect domain and OU filtering, syncing only the PopsPaper OU.
 <br>
 <br>
 
 ![Entra ID Synced Users](screenshots/07-entra-connect/02-entra-id-synced-users.png)
-
 <br>
 Entra ID overview showing the synced users and groups.
 <br>
@@ -413,21 +385,18 @@ The same process applies to the remaining five department folders (HR, Finance, 
 <br>
 
 ![AzCopy Migration Running](screenshots/08-file-migration/01-azcopy-migration-running.png)
-
 <br>
 AzCopy run from the DC, copying the PopsPaper folder to the file share with a SAS token.
 <br>
 <br>
 
 ![File Share Migrated Folders](screenshots/08-file-migration/02-file-share-migrated-folders.png)
-
 <br>
 Folders visible in the Azure file share after migration.
 <br>
 <br>
 
 ![File Share On-Premises Access](screenshots/08-file-migration/03-file-share-onprem-access.png)
-
 <br>
 Azure file share opened from on-premises through its network path.
 <br>
@@ -451,14 +420,12 @@ Identity-based access enabled on the File Share via Azure Portal, connected to s
 <br>
 
 ![Identity Based Access Enabled](screenshots/09-rbac-identity/01-identity-based-access-enabled.png)
-
 <br>
 File share settings showing identity-based access as Configured.
 <br>
 <br>
 
 ![RBAC Role Assignment](screenshots/09-rbac-identity/02-rbac-role-assignment.png)
-
 <br>
 Storage File Data SMB Share Elevated Contributor role assigned to Vivek Anand.
 <br>
@@ -482,20 +449,17 @@ NSG `nsg-hybrid-prod-noeast001` created and attached to the `vnet-pe-files` subn
 <br>
 
 ![NSG Creation](screenshots/10-nsg/01-nsg-creation.png)
-
 <br>
 Network security group created in the resource group.
 <br>
 <br>
 
 ![NSG Inbound Rules](screenshots/10-nsg/02-nsg-inbound-rules.png)
-
 <br>
 Inbound security rules on the NSG.
 <br><br>
 
 ![NSG Subnet Association](screenshots/10-nsg/03-nsg-subnet-association.png)
-
 <br>
 NSG associated with a subnet in the VNet.
 <br><br>
@@ -512,14 +476,12 @@ NSG associated with a subnet in the VNet.
 <br>
 
 ![Recovery Services Vault](screenshots/11-backup-keyvault/01-recovery-services-vault.png)
-
 <br>
 Recovery Services vault created for Azure Backup.
 <br>
 <br>
 
 ![Backup Policy Created](screenshots/11-backup-keyvault/02-backup-policy-created.png)
-
 <br>
 Daily backup policy with 30-day retention.
 <br>
@@ -544,12 +506,13 @@ The vault was configured and access control established during this project. No 
 
 <br>
 <br>
+
 key-vault-creation
 ![Key Vault Creation](screenshots/11-backup-keyvault/04-key-vault-creation.png)
-
 <br>
 Key Vault created with the Azure RBAC permission model.
-<br><br>
+<br>
+<br>
 
 ---
 
